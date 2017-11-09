@@ -50,11 +50,13 @@ class Activities extends Component {
       <div className="activities">
         <h2>Nos Activités</h2>
         <table align="center">
+          <tbody>
           <tr>
             {numbers.map(function(number, index){
-              return <td><Activity id={ index } /></td>;
+              return <td><Activity key={ index } id={ number }  /></td>;
             })}
           </tr>
+          </tbody>
         </table>
       </div>
     )
@@ -66,15 +68,38 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        bttnText: "Prendre rendez-vous"
+      step: 1,
+      bttnText: "Prendre rendez-vous",
+      showActivities: true
     };
-}
+  }
+
+  click() {
+    switch(this.state.step){
+      case 1:
+        this.setState({
+          bttnText: "Valider rendez-vous",
+          step: 2,
+          showActivities: false
+        });
+        break;
+      case 2:
+        this.setState({
+          bttnText: "",
+          step: 3
+        });
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
-        <Activities />
-        <button> {this.state.bttnText}</button>
+        <Header />        
+        { this.state.showActivities ? <Activities /> : null }
+        <button onClick={() => this.click()}> {this.state.bttnText}</button>
       </div>
     );
   }
