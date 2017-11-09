@@ -1,4 +1,4 @@
-.App {
+.App{
   text-align: center;
 }
 
@@ -16,6 +16,7 @@ header {
   padding-bottom: 75px;
   height: 150px;
   color: white;
+  text-align: center;
 }
 
 .title {
@@ -24,6 +25,30 @@ header {
 
 .address{
   font-size: 1em;
+}
+
+.activity{
+  width: 300px;
+  padding: 15px;
+  margin: 15px;
+  background-color: lightblue;
+  border-radius: 15px;
+}
+
+.activity-name{
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+}
+
+.activity-price{
+  font-weight: bold;
+  float: right;
+}
+
+.activity-image{
+  width: 300px;
+  height: 200px;
+  margin-top: 10px;
 }
 
 @keyframes App-logo-spin {
