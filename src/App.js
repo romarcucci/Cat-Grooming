@@ -63,6 +63,47 @@ class Activities extends Component {
   }
 }
 
+class Form extends Component {
+  
+  render(){
+    return(
+      <div className="activities">
+        <h2>Prendre rendez-vous</h2>
+        <form align="center">
+          Prenom: <br/>
+          <input type="text" name="firstname"/>
+          <br/>
+          Nom:<br/>
+          <input type="text" name="lastname"/>
+          <br/>
+          Date:<br/>
+          <input type="date" name="date"/>
+          <br/>
+          Telephone:<br/>
+          <input id="phonenum" type="tel" pattern="^\d{10}$" required />
+          <br/>
+          e-mail:<br/>
+          <input type="email" name="email" required placeholder="Enter a valid email address"/>
+          <br/>
+          Traitements:
+          <br/>
+          Couper les griffes<input type="checkbox" value="griffes"/>
+          Toilettage<input type="checkbox" value="toilettage"/>
+          Vernis<input type="checkbox" value="vernis"/>
+          Massage<input type="checkbox" value="massage"/>
+          <br/>
+          Taille poils:
+          <br/>
+          <input type="radio" name="poil" value="long"/> Long
+          <input type="radio" name="poil" value="short"/> Court    
+          <br/><br/>
+          <input type="submit" value="Valider rendez-vous"/>
+        </form> 
+      </div>
+    )
+  }
+}
+
 
 class App extends Component {
   constructor(props) {
@@ -70,7 +111,8 @@ class App extends Component {
     this.state = {
       step: 1,
       bttnText: "Prendre rendez-vous",
-      showActivities: true
+      showActivities: true,
+      showForm: false
     };
   }
 
@@ -80,7 +122,8 @@ class App extends Component {
         this.setState({
           bttnText: "Valider rendez-vous",
           step: 2,
-          showActivities: false
+          showActivities: false,
+          showForm: true
         });
         break;
       case 2:
@@ -99,7 +142,8 @@ class App extends Component {
       <div className="App">
         <Header />        
         { this.state.showActivities ? <Activities /> : null }
-        <button onClick={() => this.click()}> {this.state.bttnText}</button>
+        { this.state.showActivities ? <button onClick={() => this.click()}> {this.state.bttnText}</button> : null }      
+        { this.state.showForm ? <Form /> : null }
       </div>
     );
   }
