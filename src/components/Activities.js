@@ -8,16 +8,10 @@ export default class Activities extends Component {
         const numbers = [0,1,2,3,4];
         return(
             <div className="activities">
-            <h2>Nos Activités</h2>
-            <table align="center">
-                <tbody>
-                    <tr>
-                        {numbers.map(function(number, index){
-                            return <td><Activity key={index} id={number}  /></td>;
-                        })}
-                    </tr>
-                </tbody>
-            </table>
+                <h2>Nos Activités</h2>
+                {numbers.map(function(number, index){
+                    return <Activity key={index} id={number}/>
+                })}
             </div>
         )
     }

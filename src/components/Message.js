@@ -5,10 +5,12 @@ export default class Message extends Component {
     
     render(){
         return(
-            <div>
-                <h2>Prendre rendez-vous</h2>
-                <p>Merci {this.props.meeting.firstname}, votre rdv le {this.props.meeting.date} à {this.props.meeting.time} est confirmé</p>
-                <img src={require('./img/map.png')} className="map-image" alt='map' />
+            <div className="message">
+                <div className="formulaire col-xl-9 col-lg-9 col-md-9 col-sm-12">
+                    <h2>A bientôt!</h2>
+                    <p className="remerciement">Merci {this.props.meeting.firstname}, votre rdv le {this.props.meeting.date} à {this.props.meeting.time} est confirmé!</p>
+                    <img src={require('./img/map.png')} className="map-image" alt='map' />
+                </div>
             </div>
         )
     };
