@@ -20,19 +20,25 @@ export default class Activity extends Component {
     return(
       <div className="row">
         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-          <div className="activity col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <div className="activity col-xl-6 col-lg-8 col-md-10 col-sm-12 col-xl-offset-3 col-lg-offset-2 col-md-offset-1">
             <div className="row">
-              <span className="activity-name col-xl-10 col-lg-10 col-md-10 col-sm-10">
-                {names[this.props.id]} 
+              <span className="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                <img 
+                  src={require(''+images[this.props.id])} 
+                  className="activity-image" 
+                  alt={names[this.props.id]} />
               </span>
-              <span className="activity-price col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                {prices[this.props.id]} €
+              <span className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                <span className="activity-name">
+                  {names[this.props.id]} 
+                </span>
+              </span>
+              <span className="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                <span className="activity-price">
+                  {prices[this.props.id]} €
+                </span>
               </span>
             </div>
-            <img 
-              src={require(''+images[this.props.id])} 
-              className="activity-image" 
-              alt={names[this.props.id]} />
           </div>
         </div>
       </div>

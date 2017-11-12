@@ -116,7 +116,7 @@ export default class Form extends Component {
                                 </div>
                             </div>
                         </div><br/><br/>
-                        <input className="btn btn-primary" type="submit" value="Valider rendez-vous"/>
+                        <input className="btn-lg btn-primary" type="submit" value="Valider rendez-vous"/>
                     </form>
                 </div> : null }
                 <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12">
@@ -124,10 +124,10 @@ export default class Form extends Component {
                         <h3>Panier</h3>
                         <img src={require('./img/paper-bag.svg')}/>
                         <h4>Total: {this.calculPrice()} €</h4>
-                        {this.state.griffes ? <h6>Couper les griffes - 15€</h6> : null}
-                        {this.state.toilettage ? (this.state.poil==='long' ? <h6>Toilettage poils long - 70€</h6> : <h6>Toilettage poils court - 50€</h6>) : null}
-                        {this.state.vernis ? <h6>Vernis - 25€</h6> : null}
-                        {this.state.massage ? <h6>Massage - 30€</h6> : null}
+                        {this.state.griffes ? <h5>Couper les griffes - 15€</h5> : null}
+                        {this.state.toilettage ? (this.state.poil==='long' ? <h5>Toilettage poils long - 70€</h5> : <h5>Toilettage poils court - 50€</h5>) : null}
+                        {this.state.vernis ? <h5>Vernis - 25€</h5> : null}
+                        {this.state.massage ? <h5>Massage - 30€</h5> : null}
                     </div>
                 </div>
             </div>

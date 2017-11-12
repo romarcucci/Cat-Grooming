@@ -6,7 +6,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: lightblue;
 }
 
 .App{
@@ -45,23 +44,10 @@ h2{
 }
 
 .activity{
-  background-color: rgb(120, 160, 240);
-}
-
-.activity-name{
-  background-color: rgb(51, 122, 255);
-  color: white;
-  font-size: 25px;
-  padding: 15px;
-
-}
-
-.activity-price{
-  background-color: red;
-  color: white;
-  font-size: 25px;
-  padding: 15px;
-  font-weight: bold;
+  border: solid black 1px;
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 25px;
 }
 
 .btn-rdv{
@@ -72,15 +58,15 @@ h2{
 .cart{
   background-color: lightsalmon;
   color: white;
-  width: 80%;
-  margin: 10%;
+  width: 90%;
+  margin: 5%;
   border-radius: 15px;
   padding: 25px;
   height: 400px;
 }
 
 .check-label{
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 .formulaire{
@@ -88,7 +74,6 @@ h2{
   border-radius: 15px;
   margin-top: 15px;
   padding: 10px;
-  background-color: rgb(120, 160, 240);
 }
 
 h3{
@@ -105,10 +90,8 @@ h4{
 }
 
 .remerciement{
-  color: white;
   font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  text-shadow: 2px 2px 4px black;
+  font-family: Arial, Helvetica, sans-serif;  
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -121,9 +104,17 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    height: 400px;
-    width: 600px;
+    height: 50px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px gray;
   }
+  .activity-name{
+    font-size: 15px;
+  }
+  .activity-price{
+    font-size: 15px;
+    font-weight: bold;
+  }  
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -136,8 +127,16 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    height: 400px;
-    width: 600px;
+    height: 50px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px gray;
+  }
+  .activity-name{
+    font-size: 20px;
+  }
+  .activity-price{
+    font-size: 20px;
+    font-weight: bold;
   }
 }
 
@@ -151,8 +150,16 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    height: 400px;
-    width: 600px;
+    height: 100px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px gray;
+  }
+  .activity-name{
+    font-size: 25px;
+  }
+  .activity-price{
+    font-size: 25px;
+    font-weight: bold;
   }
 }
 
@@ -166,8 +173,16 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    height: 400px;
-    width: 600px;
+    height: 100px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px gray;
+  }
+  .activity-name{
+    font-size: 25px;
+  }
+  .activity-price{
+    font-size: 25px;
+    font-weight: bold;
   }
 }
 
@@ -181,8 +196,16 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    height: 400px;
-    width: 600px;
+    height: 100px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px gray;
+  }
+  .activity-name{
+    font-size: 25px;
+  }
+  .activity-price{
+    font-size: 25px;
+    font-weight: bold;
   }
 }
 
