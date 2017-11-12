@@ -1,3 +1,14 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
+}
+
 .App{
   text-align: center;
 }
@@ -12,11 +23,9 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-color: black;
-  padding-top: 20px;
-  padding-bottom: 75px;
   height: 200px;
+  padding-top: 20px;
   color: white;
-  text-align: center;
 }
 
 h2{
@@ -29,19 +38,35 @@ h2{
   border-radius: 15px;
 }
 
+.activities h2{
+  margin-top: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
 .activity{
-  background-color: lightblue;
-  padding-bottom: 50px;
+  background-color: rgb(120, 160, 240);
 }
 
 .activity-name{
-  background-color: blue;
+  background-color: rgb(51, 122, 255);
   color: white;
+  font-size: 25px;
+  padding: 15px;
+
 }
 
 .activity-price{
   background-color: red;
   color: white;
+  font-size: 25px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.btn-rdv{
+  margin-top: 40px;
+  margin-bottom: 80px;
 }
 
 .cart{
@@ -63,7 +88,7 @@ h2{
   border-radius: 15px;
   margin-top: 15px;
   padding: 10px;
-  background-color: lightblue;
+  background-color: rgb(120, 160, 240);
 }
 
 h3{
@@ -96,8 +121,8 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    width: 150px;
-    height: 100px;
+    height: 400px;
+    width: 600px;
   }
 }
 
@@ -111,8 +136,8 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    width: 300px;
-    height: 200px;
+    height: 400px;
+    width: 600px;
   }
 }
 
@@ -126,8 +151,8 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    width: 450px;
-    height: 300px;
+    height: 400px;
+    width: 600px;
   }
 }
 
@@ -141,8 +166,8 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    width: 450px;
-    height: 300px;
+    height: 400px;
+    width: 600px;
   }
 }
 
@@ -156,8 +181,8 @@ h4{
     margin-bottom: 25px;
   }
   .activity-image{
-    width: 750px;
-    height: 500px;
+    height: 400px;
+    width: 600px;
   }
 }
 

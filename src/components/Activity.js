@@ -11,11 +11,11 @@ export default class Activity extends Component {
       'Massage'];
     const prices = [15, 70, 50, 25, 30];
     const images = [
-      './img/griffes.png',
-      './img/long.png',
-      './img/court.png',
-      './img/vernis.png',
-      './img/massage.png'
+      './img/griffes.jpg',
+      './img/long.jpg',
+      './img/court.jpg',
+      './img/vernis.jpg',
+      './img/massage.jpg'
     ];
     return(
       <div className="row">
@@ -29,12 +29,10 @@ export default class Activity extends Component {
                 {prices[this.props.id]} €
               </span>
             </div>
-            <div className="row">
-              <img 
-                src={require(''+images[this.props.id])} 
-                className="activity-image col-xl-12 col-lg-12 col-md-12 col-sm-12" 
-                alt={names[this.props.id]} />
-            </div>
+            <img 
+              src={require(''+images[this.props.id])} 
+              className="activity-image" 
+              alt={names[this.props.id]} />
           </div>
         </div>
       </div>

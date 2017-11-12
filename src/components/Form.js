@@ -23,6 +23,13 @@ export default class Form extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    
+    formatDate(date) {      
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        return year + "-" + month + "-" + day;
+    }
 
     calculPrice(){
         let p = 0;
@@ -70,8 +77,8 @@ export default class Form extends Component {
                                 </div>
                                 <div className="form-group">
                                     <label>Horaire</label>
-                                    <input type="time" name="time" className="form-control" value={this.state.time} onChange={this.handleChange} required/>
-                                    <input type="date" name="date" className="form-control" value={this.state.date} onChange={this.handleChange} required/>
+                                    <input type="time" name="time" className="form-control" min="09:30:00" max="18:30:00" value={this.state.time} onChange={this.handleChange} required/>
+                                    <input type="date" name="date" className="form-control" min={this.formatDate(new Date())} value={this.state.date} onChange={this.handleChange} required/>
                                 </div>
                                 <div className="form-group">
                                     <label>Telephone (+33)</label>

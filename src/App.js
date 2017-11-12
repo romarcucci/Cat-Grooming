@@ -36,7 +36,7 @@ class App extends Component {
         </div>
         <div className="container-fluid">
           { this.state.showActivities ? <Activities /> : null }
-          { this.state.showActivities ? <button className="btn btn-primary" onClick={() => this.click()}> Prendre rendez-vous</button> : null }      
+          { this.state.showActivities ? <button className="btn-lg btn-primary btn-rdv" onClick={() => this.click()}> Prendre rendez-vous</button> : null }      
           { this.state.showForm ? <Form /> : null }
         </div>
       </div>
