@@ -76,7 +76,7 @@ export default class Form extends Component {
                                     <input type="text" name="lastname" className="form-control" value={this.state.lastname} onChange={this.handleChange} required/>
                                 </div>
                                 <div className="form-group">
-                                    <label>Horaire</label>
+                                    <label>Horaire (9:30 à 18:30)</label>
                                     <input type="time" name="time" className="form-control" min="09:30:00" max="18:30:00" value={this.state.time} onChange={this.handleChange} required/>
                                     <input type="date" name="date" className="form-control" min={this.formatDate(new Date())} value={this.state.date} onChange={this.handleChange} required/>
                                 </div>
@@ -124,10 +124,10 @@ export default class Form extends Component {
                         <h3>Panier</h3>
                         <img src={require('./img/paper-bag.svg')}/>
                         <h4>Total: {this.calculPrice()} €</h4>
-                        {this.state.griffes ? <h5>Couper les griffes - 15€</h5> : null}
-                        {this.state.toilettage ? (this.state.poil==='long' ? <h5>Toilettage poils long - 70€</h5> : <h5>Toilettage poils court - 50€</h5>) : null}
-                        {this.state.vernis ? <h5>Vernis - 25€</h5> : null}
-                        {this.state.massage ? <h5>Massage - 30€</h5> : null}
+                        {this.state.griffes ? <h5>Couper les griffes</h5> : null}
+                        {this.state.toilettage ? (this.state.poil==='long' ? <h5>Toilettage poils long</h5> : <h5>Toilettage poils court</h5>) : null}
+                        {this.state.vernis ? <h5>Vernis</h5> : null}
+                        {this.state.massage ? <h5>Massage</h5> : null}
                     </div>
                 </div>
             </div>
