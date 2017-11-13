@@ -116,7 +116,7 @@ export default class Form extends Component {
                                 </div>
                             </div>
                         </div><br/><br/>
-                        <input className="btn-lg btn-primary" type="submit" value="Valider rendez-vous"/>
+                        <input className="btn-lg btn-basic" type="submit" value="Valider rendez-vous"/>
                     </form>
                 </div> : null }
                 <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12">

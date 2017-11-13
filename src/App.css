@@ -31,7 +31,8 @@ h2{
   margin-top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: rgb(50, 120, 180);
+  /*background: rgb(50, 120, 180);*/
+  background-color: gray;
   font-weight: bold;
   color: white;
   border-radius: 15px;
@@ -56,12 +57,10 @@ h2{
 }
 
 .cart{
-  background-color: lightsalmon;
-  color: white;
-  width: 90%;
-  margin: 5%;
+  border: 1px solid rgb(219, 62, 62);
+  margin-top: 15px;
   border-radius: 15px;
-  padding: 25px;
+  padding: 5px;
   height: 400px;
 }
 
@@ -70,7 +69,7 @@ h2{
 }
 
 .formulaire{
-  border: solid lightblue 2px;
+  border: solid black 1px;
   border-radius: 15px;
   margin-top: 15px;
   padding: 10px;
@@ -78,19 +77,23 @@ h2{
 
 h3{
   margin-bottom: 25px;
-  text-decoration: underline;
+  padding: 10px;
+  color: white;
   font-weight: bold;
+  background-color: rgb(219, 62, 62);
+  border-radius: 15px;
 }
 
 h4{
-  background-color: #F33;
-  border-radius: 5px;
+  background-color: rgb(219, 62, 62);
+  color: white;
+  border-radius: 5px; 
   padding: 5px;
   margin: 15px;
 }
 
 .remerciement{
-  font-size: 40px;
+  font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;  
 }
 
