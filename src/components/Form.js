@@ -33,10 +33,14 @@ export default class Form extends Component {
 
     calculPrice(){
         let p = 0;
-        this.state.griffes ? p += 15 : null;
-        this.state.toilettage ? (this.state.poil === 'long' ? p += 70 : p += 50) : null; 
-        this.state.vernis ? p += 25 : null;
-        this.state.massage ? p += 30 : null;
+        if(this.state.griffes)
+            p += 15;
+        if(this.state.toilettage) 
+            this.state.poil === 'long' ? p += 70 : p += 50; 
+        if(this.state.vernis)
+            p += 25;
+        if(this.state.massage) 
+            p += 30;
         return p;
     }
 
@@ -60,74 +64,76 @@ export default class Form extends Component {
 
         return(
             <div>
-                { this.state.showMessage ? <Message meeting={this.state}/> : null }
-                { this.state.showForm ?  
-                <div className="formulaire col-xl-9 col-lg-9 col-md-9 col-sm-12">
-                    <h2>Prendre rendez-vous</h2>
-                    <form align="center" onSubmit={this.handleSubmit}>
-                        <div className="row">
-                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div className="form-group">
-                                    <label>Prenom</label>
-                                    <input type="text" name="firstname" className="form-control" value={this.state.firstname} onChange={this.handleChange} required/>
+                { this.state.showMessage && <Message meeting={this.state}/> }
+                { this.state.showForm &&
+                <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12">
+                    <div className="formulaire">
+                        <h2>Prendre rendez-vous</h2>
+                        <form align="center" onSubmit={this.handleSubmit}>
+                            <div className="row">
+                                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="form-group">
+                                        <label>Prenom</label>
+                                        <input type="text" name="firstname" className="form-control" value={this.state.firstname} onChange={this.handleChange} required/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Nom</label>
+                                        <input type="text" name="lastname" className="form-control" value={this.state.lastname} onChange={this.handleChange} required/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Horaire (9:30 à 18:30)</label>
+                                        <input type="time" name="time" className="form-control" min="09:30:00" max="18:30:00" value={this.state.time} onChange={this.handleChange} required/>
+                                        <input type="date" name="date" className="form-control" min={this.formatDate(new Date())} value={this.state.date} onChange={this.handleChange} required/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label>Telephone (+33)</label>
+                                        <input type="tel" className="form-control" onChange={this.handleChange} pattern="^\d{9}$" required/>
+                                    </div>
                                 </div>
-                                <div className="form-group">
-                                    <label>Nom</label>
-                                    <input type="text" name="lastname" className="form-control" value={this.state.lastname} onChange={this.handleChange} required/>
+                                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="form-group">
+                                        <label>e-mail</label>
+                                        <input type="email" name="email" className="form-control" onChange={this.handleChange} required/>
+                                    </div>
+                                    <div className="form-check">
+                                        <label>Traitements:</label><br/>
+                                        <label className="check-label">
+                                            <input type="checkbox" className="form-check-input" name="griffes" onClick={this.handleChange}/> Couper les griffes - 15€
+                                        </label><br/>
+                                        <label className="check-label">
+                                            <input type="checkbox" className="form-check-input" name="toilettage" onClick={this.handleChange}/> Toilettage - {this.state.poil==='long' ? 70 : 50 }€
+                                        </label><br/>
+                                        <label className="check-label">
+                                            <input type="checkbox" className="form-check-input" name="vernis" onClick={this.handleChange}/> Vernis - 25€
+                                        </label><br/>
+                                        <label className="check-label">
+                                            <input type="checkbox" className="form-check-input" name="massage" onClick={this.handleChange}/> Massage - 30€
+                                        </label>
+                                    </div><br/>
+                                    <div className="form-check">
+                                        <label>Poil:</label><br/>
+                                        <label className="check-label">
+                                            <input className="form-check-input" type="radio" name="poil" value="long" onClick={this.handleChange}/> Long
+                                        </label><br/>
+                                        <label className="check-label">
+                                            <input className="form-check-input" type="radio" name="poil" value="short" onClick={this.handleChange}/> Court
+                                        </label>
+                                    </div>
                                 </div>
-                                <div className="form-group">
-                                    <label>Horaire (9:30 à 18:30)</label>
-                                    <input type="time" name="time" className="form-control" min="09:30:00" max="18:30:00" value={this.state.time} onChange={this.handleChange} required/>
-                                    <input type="date" name="date" className="form-control" min={this.formatDate(new Date())} value={this.state.date} onChange={this.handleChange} required/>
-                                </div>
-                                <div className="form-group">
-                                    <label>Telephone (+33)</label>
-                                    <input type="tel" className="form-control" onChange={this.handleChange} pattern="^\d{9}$" required/>
-                                </div>
-                            </div>
-                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div className="form-group">
-                                    <label>e-mail</label>
-                                    <input type="email" name="email" className="form-control" onChange={this.handleChange} required/>
-                                </div>
-                                <div className="form-check">
-                                    <label>Traitements:</label><br/>
-                                    <label className="check-label">
-                                        <input type="checkbox" className="form-check-input" name="griffes" onClick={this.handleChange}/> Couper les griffes - 15€
-                                    </label><br/>
-                                    <label className="check-label">
-                                        <input type="checkbox" className="form-check-input" name="toilettage" onClick={this.handleChange}/> Toilettage - {this.state.poil==='long' ? 70 : 50 }€
-                                    </label><br/>
-                                    <label className="check-label">
-                                        <input type="checkbox" className="form-check-input" name="vernis" onClick={this.handleChange}/> Vernis - 25€
-                                    </label><br/>
-                                    <label className="check-label">
-                                        <input type="checkbox" className="form-check-input" name="massage" onClick={this.handleChange}/> Massage - 30€
-                                    </label>
-                                </div><br/>
-                                <div className="form-check">
-                                    <label>Poil:</label><br/>
-                                    <label className="check-label">
-                                        <input className="form-check-input" type="radio" name="poil" value="long" onClick={this.handleChange}/> Long
-                                    </label><br/>
-                                    <label className="check-label">
-                                        <input className="form-check-input" type="radio" name="poil" value="short" onClick={this.handleChange}/> Court
-                                    </label>
-                                </div>
-                            </div>
-                        </div><br/><br/>
-                        <input className="btn-lg btn-basic" type="submit" value="Valider rendez-vous"/>
-                    </form>
-                </div> : null }
+                            </div><br/><br/>
+                            <input className="btn-lg btn-basic" type="submit" value="Valider rendez-vous"/>
+                        </form>
+                    </div>
+                </div>}
                 <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                     <div className="cart">
                         <h3>Panier</h3>
-                        <img src={require('./img/paper-bag.svg')}/>
+                        <img src={require('./img/paper-bag.svg')} alt="bag"/>
                         <h4>Total: {this.calculPrice()} €</h4>
-                        {this.state.griffes ? <h5>Couper les griffes</h5> : null}
-                        {this.state.toilettage ? (this.state.poil==='long' ? <h5>Toilettage poils long</h5> : <h5>Toilettage poils court</h5>) : null}
-                        {this.state.vernis ? <h5>Vernis</h5> : null}
-                        {this.state.massage ? <h5>Massage</h5> : null}
+                        {this.state.griffes && <h5>Couper les griffes</h5>}
+                        {this.state.toilettage && (this.state.poil==='long' ? <h5>Toilettage poils long</h5> : <h5>Toilettage poils court</h5>)}
+                        {this.state.vernis && <h5>Vernis</h5>}
+                        {this.state.massage && <h5>Massage</h5>}
                     </div>
                 </div>
             </div>
